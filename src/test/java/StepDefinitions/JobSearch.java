@@ -3,6 +3,7 @@ package StepDefinitions;
 import java.time.Duration;
 import java.util.List;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -122,6 +123,8 @@ public class JobSearch {
 		careersPage1 = new CareersPage_PF(driver);
 		List<WebElement> jobResults = careersPage1.getSearchJobResults();
 		//Assert.assertTrue(jobResults.size() > 0, "Test Failed: No search results found for 'Automation Tester'.");
+		Assert.assertTrue("Test Failed: No search results found for 'Automation Tester'.", 
+	            jobResults.size() > 0);
 
 
 
